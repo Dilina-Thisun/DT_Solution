@@ -1207,3 +1207,101 @@ body.dark-mode .contact-form textarea{
   }
 
 }
+
+
+.pricing{
+  padding:100px 0;
+  background:#f8fafc;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.pricing-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:40px 30px;
+
+  text-align:center;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+  transition:.4s;
+
+  position:relative;
+}
+
+.pricing-card:hover{
+
+  transform:translateY(-10px);
+
+}
+
+.pricing-card h3{
+
+  font-size:28px;
+
+  margin-bottom:20px;
+}
+
+.price{
+
+  font-size:42px;
+
+  font-weight:700;
+
+  color:#2563eb;
+
+  margin-bottom:25px;
+}
+
+.pricing-card ul{
+
+  list-style:none;
+
+  margin-bottom:30px;
+}
+
+.pricing-card ul li{
+
+  padding:10px 0;
+
+  border-bottom:1px solid #eee;
+}
+
+.featured{
+
+  border:3px solid #2563eb;
+
+  transform:scale(1.05);
+}
+
+.popular{
+
+  position:absolute;
+
+  top:-12px;
+
+  left:50%;
+
+  transform:translateX(-50%);
+
+  background:#2563eb;
+
+  color:white;
+
+  padding:8px 20px;
+
+  border-radius:30px;
+
+  font-size:14px;
+}
+
+

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DT SOLUTION</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.pricing{
+    padding:100px 0;
+}
+
+.pricing h2{
+    text-align:center;
+    font-size:3rem;
+    color:#0f172a;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#64748b;
+    margin-bottom:60px;
+    font-size:1.1rem;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.pricing-card{
+    background:#fff;
+    border-radius:25px;
+    padding:40px 30px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.pricing-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,0.15);
+}
+
+.pricing-card h3{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:45px;
+    font-weight:700;
+    color:#2563eb;
+    margin-bottom:25px;
+}
+
+.pricing-card ul{
+    list-style:none;
+    margin-bottom:30px;
+}
+
+.pricing-card ul li{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.pricing-card ul li:last-child{
+    border-bottom:none;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:14px 30px;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+.featured{
+    border:3px solid #2563eb;
+    transform:scale(1.05);
+}
+
+.popular{
+    position:absolute;
+    top:15px;
+    right:-35px;
+    background:#2563eb;
+    color:white;
+    padding:8px 40px;
+    transform:rotate(45deg);
+    font-size:13px;
+    font-weight:600;
+}
+
+.extra-services{
+    margin-top:100px;
+}
+
+.extra-services h2{
+    margin-bottom:40px;
+}
+
+.service-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.service-table th{
+    background:#2563eb;
+    color:white;
+    padding:18px;
+}
+
+.service-table td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+}
+
+.service-table tr:hover{
+    background:#f8fafc;
+}
+
+.footer{
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #0f172a,
+      #111827
+    );
+
+  color:white;
+
+  padding:
+    5rem 0 2rem;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.footer::before{
+
+  content:'';
+
+  position:absolute;
+
+  top:-120px;
+  right:-120px;
+
+  width:300px;
+  height:300px;
+
+  background:
+    rgba(59,130,246,0.08);
+
+  border-radius:50%;
+
+  filter:blur(40px);
+}
+
+.footer::after{
+
+  content:'';
+
+  position:absolute;
+
+  bottom:-100px;
+  left:-100px;
+
+  width:260px;
+  height:260px;
+
+  background:
+    rgba(249,115,22,0.08);
+
+  border-radius:50%;
+
+  filter:blur(40px);
+}
+
+.footer-top{
+
+  display:grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1fr
+    1.2fr;
+
+  gap:3rem;
+
+  padding-bottom:3rem;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.08);
+}
+
+/* LOGO */
+
+.footer-logo{
+
+  font-size:2rem;
+  font-weight:700;
+
+  margin-bottom:1rem;
+
+  color:white;
+}
+
+.footer-logo span{
+
+  color:#3b82f6;
+}
+
+.footer-description{
+
+  color:#cbd5e1;
+
+  line-height:1.8;
+
+  max-width:320px;
+}
+
+/* LINKS */
+
+.footer-links h3,
+.footer-contact h3{
+
+  font-size:1.3rem;
+
+  margin-bottom:1.5rem;
+
+  position:relative;
+}
+
+.footer-links h3::after,
+.footer-contact h3::after{
+
+  content:'';
+
+  position:absolute;
+
+  left:0;
+  bottom:-8px;
+
+  width:45px;
+  height:3px;
+
+  background:#3b82f6;
+
+  border-radius:20px;
+}
+
+.footer-links ul{
+
+  list-style:none;
+}
+
+.footer-links ul li{
+
+  margin-bottom:1rem;
+
+  color:#cbd5e1;
+
+  transition:0.3s;
+}
+
+.footer-links ul li a{
+
+  text-decoration:none;
+
+  color:#cbd5e1;
+
+  transition:0.3s;
+}
+
+.footer-links ul li:hover,
+.footer-links ul li a:hover{
+
+  color:#3b82f6;
+
+  transform:translateX(5px);
+}
+
+/* CONTACT */
+
+.footer-contact p{
+
+  margin-bottom:1rem;
+
+  color:#cbd5e1;
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+}
+
+.footer-contact i{
+
+  color:#3b82f6;
+}
+
+/* SOCIAL */
+
+.footer-social{
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:1rem;
+
+  padding:2.5rem 0;
+}
+
+.footer-social a{
+
+  width:52px;
+  height:52px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  color:white;
+
+  font-size:1.2rem;
+
+  text-decoration:none;
+
+  transition:0.4s;
+
+  backdrop-filter:blur(10px);
+}
+
+.footer-social a:hover{
+
+  transform:
+    translateY(-8px)
+    scale(1.08);
+
+  background:#3b82f6;
+
+  box-shadow:
+    0 10px 25px
+    rgba(59,130,246,0.45);
+}
+
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+
+  border-top:
+    1px solid
+    rgba(255,255,255,0.08);
+
+  padding-top:2rem;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  flex-wrap:wrap;
+
+  gap:1rem;
+
+  text-align:center;
+}
+
+.footer-bottom p{
+
+  color:#94a3b8;
+
+  font-size:0.95rem;
+}
+
+@media(max-width:768px){
+
+    .pricing h2{
+        font-size:2.2rem;
+    }
+
+    .featured{
+        transform:none;
+    }
+
+    .price{
+        font-size:38px;
+    }
+
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:#0f172a;
+
+    padding:20px 0;
+}
+
+.navbar .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:white;
+}
+
+.logo span{
+    color:#2563eb;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:#2563eb;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+  <div class="container">
+
+    <div class="logo">
+      <span>DT</span> SOLUTION
+    </div>
+
+    <ul class="nav-links">
+
+        
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="index.html#about">About</a></li>
+
+        <li><a href="index.html#services">Services</a></li>
+
+        <li><a href="index.html#projects">Projects</a></li>
+
+        <li><a href="index.html#contact">Contact</a></li>
+
+        <li><a href="./pricing_packages.html" class="active">Pricing</a></li>
+
+
+    </ul>
+
+  </div>
+
+</nav>
+
+<section class="pricing">
+
+<div class="container">
+
+<h2>Website Development Packages</h2>
+
+<p class="section-subtitle">
+Affordable & Professional Website Solutions for Every Business
+</p>
+
+<div class="pricing-grid">
+
+<!-- Starter -->
+
+<div class="pricing-card">
+
+<h3>Starter</h3>
+
+<div class="price">
+Rs. 35,000
+</div>
+
+<ul>
+
+<li>✔ Up to 5 Pages</li>
+<li>✔ Mobile Responsive Design</li>
+<li>✔ Contact Form</li>
+<li>✔ WhatsApp Integration</li>
+<li>✔ Basic SEO Setup</li>
+<li>✔ 1 Month Support</li>
+
+</ul>
+
+<a href="index.html#contact" class="btn">
+Get Started
+</a>
+
+</div>
+
+<!-- Business -->
+
+<div class="pricing-card featured">
+
+<span class="popular">
+Most Popular
+</span>
+
+<h3>Business</h3>
+
+<div class="price">
+Rs. 65,000
+</div>
+
+<ul>
+
+<li>✔ Up to 10 Pages</li>
+<li>✔ Premium UI Design</li>
+<li>✔ WhatsApp Integration</li>
+<li>✔ Contact Forms</li>
+<li>✔ Google Maps</li>
+<li>✔ SEO Optimization</li>
+<li>✔ Speed Optimization</li>
+<li>✔ 3 Months Support</li>
+
+
+</ul>
+
+<a href="index.html#contact" class="btn">
+Get Started
+</a>
+
+</div>
+
+<!-- Premium -->
+
+<div class="pricing-card">
+
+<h3>Premium</h3>
+
+<div class="price">
+Rs. 120,000
+</div>
+
+<ul>
+
+<li>✔ Unlimited Pages</li>
+<li>✔ Admin Dashboard</li>
+<li>✔ Database Integration</li>
+<li>✔ Custom Features</li>
+<li>✔ Advanced SEO</li>
+<li>✔ Performance Optimization</li>
+<li>✔ Security Setup</li>
+<li>✔ Contact & Inquiry Forms</li>
+<li>✔ Admin Dashboard</li>
+<li>✔ Database Integration</li>
+<li>✔ Custom Features</li>
+<li>✔ Advanced SEO</li>
+<li>✔ Domain & Hosting Setup Assistance</li>
+<li>✔ 5 Free Revisions</li>
+<li>✔ 6 Months Support</li>
+
+</ul>
+
+<a href="index.html#contact" class="btn">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+<!-- Extra Services -->
+
+<div class="extra-services">
+
+<h2>Additional Services</h2>
+
+<table class="service-table">
+
+<tr>
+<th>Service</th>
+<th>Price</th>
+</tr>
+
+<tr>
+<td>Domain Registration</td>
+<td>Rs. 5,000/8,000/year</td>
+</tr>
+
+<tr>
+<td>Hosting Setup</td>
+<td>Rs. 10,000/year</td>
+</tr>
+
+<tr>
+<td>Website Maintenance</td>
+<td>Rs. 5,000/month</td>
+</tr>
+
+<tr>
+<td>SEO Optimization</td>
+<td>Rs. 15,000+</td>
+</tr>
+
+<tr>
+<td>Logo Design</td>
+<td>Rs. 5,000+</td>
+</tr>
+
+<tr>
+<td>Graphic Design</td>
+<td>Rs. 3,000+</td>
+</tr>
+
+<tr>
+<td>Social Media Management</td>
+<td>Rs. 15,000/month</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-top">
+
+      <!-- LOGO -->
+
+      <div class="footer-brand">
+
+        <div class="footer-logo">
+
+          <span>DT</span> SOLUTION
+
+        </div>
+
+        <p class="footer-description">
+
+          Premium Web Development,
+          Software Development,
+          UI/UX Design &
+          IoT Solutions Company in Sri Lanka.
+
+        </p>
+
+      </div>
+
+      <!-- QUICK LINKS -->
+
+      <div class="footer-links">
+
+        <h3>Quick Links</h3>
+
+        <ul>
+
+          <li><a href="#home">Home</a></li>
+
+          <li><a href="#about">About</a></li>
+
+          <li><a href="#services">Services</a></li>
+
+          <li><a href="#projects">Projects</a></li>
+
+          <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+      </div>
+
+      <!-- SERVICES -->
+
+      <div class="footer-links">
+
+        <h3>Services</h3>
+
+        <ul>
+
+          <li>Web Development</li>
+
+          <li>Software Systems</li>
+
+          <li>Mobile Responsive Design</li>
+
+          <li>UI/UX Design</li>
+
+          <li>IoT Solutions</li>
+
+        </ul>
+
+      </div>
+
+      <!-- CONTACT -->
+
+      <div class="footer-contact">
+
+        <h3>Contact</h3>
+
+        <p>
+
+          <i class="fas fa-phone"></i>
+          +94 76 850 0959
+
+        </p>
+
+        <p>
+
+          <i class="fas fa-envelope"></i>
+          dilinathisun@gmail.com
+
+        </p>
+
+        <p>
+
+          <i class="fas fa-map-marker-alt"></i>
+          Weliweriya, Sri Lanka
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- SOCIAL MEDIA -->
+
+    <div class="footer-social">
+
+      <a
+        href=""
+        target="_blank"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a
+        href=""
+        target="_blank"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a
+        href=""
+        target="_blank"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <a
+        href=""
+        target="_blank"
+      >
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a
+        href=""
+        target="_blank"
+      >
+        <i class="fab fa-youtube"></i>
+      </a>
+
+      <a
+        href=""
+        target="_blank"
+      >
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+      <p>
+
+        © 2026 DT SOLUTION.
+        All Rights Reserved.
+
+      </p>
+
+      <p>
+
+        Designed & Developed by
+        Dilina Thisun Adikari
+
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>
