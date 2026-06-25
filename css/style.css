@@ -1305,3 +1305,9 @@ body.dark-mode .contact-form textarea{
 }
 
 
+.contact-actions{
+  display:flex;
+  gap:15px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}

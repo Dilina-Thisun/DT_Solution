@@ -476,3 +476,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+/* ============================= */
+/* CONTACT FORM TO WHATSAPP */
+/* ============================= */
+
+const contactForm = document.getElementById("contactForm");
+
+if(contactForm){
+
+  contactForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name =
+      document.getElementById("name").value;
+
+    let email =
+      document.getElementById("email").value;
+
+    let subject =
+      document.getElementById("subject").value;
+
+    let message =
+      document.getElementById("message").value;
+
+    let whatsappMessage =
+`🚀 New Project Inquiry
+
+👤 Name: ${name}
+
+📧 Email: ${email}
+
+📌 Subject: ${subject}
+
+💬 Message:
+${message}`;
+
+    let whatsappURL =
+`https://wa.me/94768500959?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+    contactForm.reset();
+
+  });
+
+}
