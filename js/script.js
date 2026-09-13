@@ -4,19 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
   /* PRELOADER */
   /* ===================================== */
 
-  const preloader = document.getElementById('preloader');
+const preloader = document.getElementById('preloader');
 
-  window.addEventListener('load', () => {
+window.addEventListener('load', () => {
 
+  setTimeout(() => {
+
+    preloader.classList.add('hide');
+
+    // remove from DOM after the fade transition finishes
     setTimeout(() => {
+      preloader.remove();
+    }, 500);
 
-      preloader.style.opacity = '0';
+  }, 700);
 
-      preloader.style.visibility = 'hidden';
-
-    }, 700);
-
-  });
+});
 
   /* ===================================== */
   /* CUSTOM CURSOR */
