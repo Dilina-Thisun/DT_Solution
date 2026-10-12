@@ -518,7 +518,7 @@ if(contactForm){
 ${message}`;
 
     let whatsappURL =
-`https://wa.me/94768500959?text=${encodeURIComponent(whatsappMessage)}`;
+`https://wa.me/94768780959?text=${encodeURIComponent(whatsappMessage)}`;
 
     window.open(
       whatsappURL,
@@ -530,3 +530,4 @@ ${message}`;
   });
 
 }
+
