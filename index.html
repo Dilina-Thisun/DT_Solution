@@ -36,6 +36,11 @@
 
 <body>
 
+
+
+
+
+
   <!-- ================= PRELOADER ================= -->
 
 <div id="preloader">
@@ -48,9 +53,18 @@
 
 
 
+
+
+
+
   <!-- ================= SCROLL PROGRESS BAR ================= -->
 
   <div class="progress-bar"></div>
+
+
+
+
+
 
   <!-- ================= NAVBAR ================= -->
 
@@ -102,6 +116,10 @@
     </div>
 
   </nav>
+
+
+
+
 
   <!-- ================= HERO ================= -->
 
@@ -203,6 +221,11 @@
 
   </section>
 
+
+
+
+
+
   <!-- ================= ABOUT ================= -->
 
   <section id="about" class="about section-animate">
@@ -243,6 +266,10 @@
     </div>
 
   </section>
+
+
+
+
 
   <!-- ================= SERVICES ================= -->
 
@@ -338,209 +365,51 @@
 
   </section>
 
+
+
+
+
   <!-- ================= PROJECTS ================= -->
 
-  <section id="projects" class="projects section-animate">
+<section id="projects" class="projects section-animate">
+  <div class="container">
 
-    <div class="container">
-
+    <div class="pj-head">
       <h2>Featured Projects</h2>
-
-      <p class="section-subtitle">
-
-        Real-world solutions built with innovation
-
-      </p>
-
-      <div class="projects-grid">
-
-        <!-- PROJECT -->
-
-        <div class="project-card">
-
-          <div class="project-img">
-
-            <img
-              src="images/projects/bin.jpeg"
-              alt="Smart Bin"
-            />
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>Smart Bin System</h3>
-
-            <p class="tech">
-           
-            </p>
-
-            <p>
-              Smart waste monitoring system with GPS and SMS alerts.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT -->
-
-        <div class="project-card">
-
-          <div class="project-img">
-
-            <img
-              src="images/projects/gym.jpeg"
-              alt="Gym Management"
-            />
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>Gym Management</h3>
-
-            <p class="tech">
-             
-            </p>
-
-            <p>
-              Complete gym management platform with memberships.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT -->
-
-        <div class="project-card">
-
-          <div class="project-img">
-
-            <img
-              src="images/projects/gadget_hub.jpeg"
-              alt="GadgetHub"
-            />
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>GadgetHub</h3>
-
-            <p class="tech">
-            
-            </p>
-
-            <p>
-              Service-oriented procurement management system.
-            </p>
-
-          </div>
-
-        </div>
-
-        <!-- PROJECT -->
-
-          <div class="project-card">
-
-          <div class="project-img">
-
-            <img
-              src="images/projects/tool rent.png"
-              alt="Construction Tool Rental Management System"
-            />
-
-          </div>
-
-          <div class="project-info">
-
-            <h3>Construction Tool Rental Management System</h3>
-
-            <p class="tech">
-             
-            </p>
-
-            <p>
-              Construction Tool Rental Management System A smart and user-friendly solution for managing tools,
-              customers, rentals, deposits, payments, returns, and business reports 
-              all in one system. Built to simplify daily rental operations and improve business efficiency.
-
-            </p>
-
-          </div>
-
-        </div>
-
-                <!-- PROJECT -->
-
-<div class="project-card">
-
-    <div class="project-img">
-
-        <img
-            src="images/projects/vehicle system.jpeg"
-            alt="Vehicle Management System"
-        />
-
     </div>
 
-    <div class="project-info">
-
-        <h3>Vehicle Management System</h3>
-
-        <p class="tech">
-            
-        </p>
-
-        <p>
-            Advanced vehicle dealership management platform featuring vehicle stock management, 
-            buying & selling records, customer database, invoice generation, profit tracking, and secure admin controls.
-        </p>
-
-    </div>
-
-</div>
-
-
-
-             <!-- PROJECT -->
-
-<div class="project-card">
-
-    <div class="project-img">
-
-        <img
-            src="images/projects/salon system.jpeg"
-            alt="Salon Management System"
-        />
-
-    </div>
-
-    <div class="project-info">
-
-        <h3>Salon Management System</h3>
-
-        <p class="tech">
-            
-        </p>
-
-        <p>
-            A complete salon management solution featuring appointment booking, customer records, barber management, 
-            billing, sales reports, inventory tracking, and WhatsApp customer engagement tools. Designed to streamline salon operations and improve customer experience.
-        </p>
-
-    </div>
-
-</div>
-
-
+    <div class="pj-toolbar">
+      <div class="pj-filters" id="pjFilters" role="tablist"></div>
+      <div class="pj-nav">
+        <span class="pj-count" id="pjCount"></span>
+        <button type="button" id="pjPrev" aria-label="Previous project">&#10094;</button>
+        <button type="button" id="pjNext" aria-label="Next project">&#10095;</button>
       </div>
-
     </div>
 
-  </section>
+    <div class="pj-track" id="pjTrack"></div>
+    <div class="pj-progress"><span id="pjBar"></span></div>
+
+  </div>
+
+  <!-- Details modal -->
+  <div class="pj-modal" id="pjModal" aria-hidden="true">
+    <div class="pj-dialog" role="dialog" aria-modal="true" aria-labelledby="pjmTitle">
+      <button type="button" class="pj-close" id="pjClose" aria-label="Close">&times;</button>
+      <img id="pjmImg" src="" alt="" />
+      <div class="pj-dbody">
+        <span class="pj-badge" id="pjmCat"></span>
+        <h3 id="pjmTitle"></h3>
+        <p id="pjmDesc"></p>
+        <div class="pj-tech" id="pjmTech"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
   <!-- ================= CONTACT ================= -->
 
@@ -580,6 +449,10 @@
           </p>
 
         </div>
+
+
+
+
 
         <!-- FORM -->
 
@@ -640,6 +513,11 @@
 
   </section>
 
+
+
+
+
+
   <!-- ================= WHATSAPP ================= -->
 
 
@@ -664,6 +542,9 @@
 </div>
 
 
+
+
+
   <!-- ================= BACK TO TOP ================= -->
 
   <button
@@ -674,6 +555,9 @@
     <i class="fas fa-arrow-up"></i>
 
   </button>
+
+
+
 
 <!-- ================= FOOTER ================= -->
 
@@ -781,6 +665,10 @@
 
     </div>
 
+
+
+
+
     <!-- SOCIAL MEDIA -->
 
     <div class="footer-social">
@@ -829,6 +717,10 @@
 
     </div>
 
+
+
+
+
     <!-- FOOTER BOTTOM -->
 
     <div class="footer-bottom">
@@ -853,8 +745,125 @@
 
 </footer>
 
+
+
+
+
   <!-- JS -->
   <script src="js/script.js"></script>
+
+  <script>
+(function () {
+ 
+  const PROJECTS = [
+    { title:"Smart Bin System", cat:"IoT", img:"images/projects/bin.jpeg",
+      desc:"Smart waste monitoring system with GPS tracking and SMS alerts.", tech:[] },
+
+
+    { title:"Gym Management", cat:"Systems", img:"images/projects/gym.jpeg",
+      desc:"Complete gym management platform with memberships.", tech:[] },
+
+
+    { title:"GadgetHub", cat:"Web", img:"images/projects/gadget_hub.jpeg",
+      desc:"Service-oriented procurement management system.", tech:[] },
+
+
+    { title:"Construction Tool Rental System", cat:"Systems", img:"images/projects/tool rent.png",
+      desc:"A smart and user-friendly solution for managing tools, customers, rentals, deposits, payments, returns, and business reports all in one system. Built to simplify daily rental operations and improve business efficiency.",
+      tech:[] },
+
+
+    { title:"Vehicle Management System", cat:"Systems", img:"images/projects/vehicle system.jpeg",
+      desc:"Advanced vehicle dealership management platform featuring vehicle stock management, buying & selling records, customer database, invoice generation, profit tracking, and secure admin controls.",
+      tech:[] },
+
+      
+    { title:"Salon Management System", cat:"Systems", img:"images/projects/salon system.jpeg",
+      desc:"A complete salon management solution featuring appointment booking, customer records, barber management, billing, sales reports, inventory tracking, and WhatsApp customer engagement tools. Designed to streamline salon operations and improve customer experience.",
+      tech:[] }
+  ];
+
+  const $ = id => document.getElementById(id);
+  const track = $('pjTrack'), bar = $('pjBar'), prev = $('pjPrev'), next = $('pjNext');
+  const filters = $('pjFilters'), count = $('pjCount'), modal = $('pjModal');
+  if (!track) return;
+
+  let active = 'All', timer;
+  const cats = ['All', ...new Set(PROJECTS.map(p => p.cat))];
+
+  filters.innerHTML = cats.map(c =>
+    `<button type="button" class="${c === 'All' ? 'active' : ''}" data-cat="${c}">${c}</button>`).join('');
+
+  function render() {
+    const list = PROJECTS.map((p, i) => ({ ...p, i })).filter(p => active === 'All' || p.cat === active);
+    track.innerHTML = list.map((p, n) => `
+      <article class="pj-card" style="animation-delay:${n * 60}ms" data-i="${p.i}">
+        <div class="pj-media">
+          <img src="${p.img}" alt="${p.title}" loading="lazy" draggable="false" />
+          <span class="pj-badge">${p.cat}</span>
+        </div>
+        <div class="pj-body">
+          <h3>${p.title}</h3>
+          <p>${p.desc}</p>
+          <div class="pj-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
+          <button type="button" class="pj-more">View Details <span>&rarr;</span></button>
+        </div>
+      </article>`).join('');
+    count.textContent = list.length + (list.length === 1 ? ' project' : ' projects');
+    track.scrollTo({ left: 0, behavior: 'auto' });
+    update();
+  }
+
+  function update() {
+    const max = track.scrollWidth - track.clientWidth;
+    bar.style.width = (max <= 0 ? 100 : ((track.scrollLeft + track.clientWidth) / track.scrollWidth) * 100) + '%';
+    prev.disabled = track.scrollLeft <= 5;
+    next.disabled = track.scrollLeft >= max - 5;
+  }
+  const step = () => (track.querySelector('.pj-card')?.offsetWidth || 300) + 26;
+
+  next.onclick = () => track.scrollBy({ left: step(), behavior: 'smooth' });
+  prev.onclick = () => track.scrollBy({ left: -step(), behavior: 'smooth' });
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+
+  filters.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    active = b.dataset.cat;
+    filters.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+    render();
+  });
+
+  /* mouse drag to slide (desktop) */
+  let down = false, sx = 0, sl = 0, moved = false;
+  track.addEventListener('mousedown', e => { down = true; moved = false; sx = e.pageX; sl = track.scrollLeft; track.style.scrollBehavior = 'auto'; track.style.scrollSnapType = 'none'; });
+  window.addEventListener('mouseup', () => { if (!down) return; down = false; track.style.scrollBehavior = ''; track.style.scrollSnapType = ''; });
+  window.addEventListener('mousemove', e => { if (!down) return; const d = e.pageX - sx; if (Math.abs(d) > 5) moved = true; track.scrollLeft = sl - d; });
+
+  /* modal */
+  function openModal(i) {
+    const p = PROJECTS[i];
+    $('pjmImg').src = p.img; $('pjmImg').alt = p.title;
+    $('pjmCat').textContent = p.cat; $('pjmTitle').textContent = p.title; $('pjmDesc').textContent = p.desc;
+    $('pjmTech').innerHTML = p.tech.map(t => `<span>${t}</span>`).join('');
+    modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; stop();
+  }
+  function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; start(); }
+  track.addEventListener('click', e => { if (moved) return; const c = e.target.closest('.pj-card'); if (c) openModal(+c.dataset.i); });
+  $('pjClose').onclick = closeModal;
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* gentle autoplay (pauses on hover / touch / modal) */
+  function start() { stop(); timer = setInterval(() => { track.scrollLeft >= track.scrollWidth - track.clientWidth - 5 ? track.scrollTo({ left: 0 }) : next.click(); }, 5000); }
+  function stop() { clearInterval(timer); }
+  track.addEventListener('mouseenter', stop); track.addEventListener('mouseleave', start);
+  track.addEventListener('touchstart', stop, { passive: true });
+
+  render(); start();
+})();
+</script>
 
 </body>
 </html>
